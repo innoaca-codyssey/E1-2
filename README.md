@@ -209,3 +209,19 @@ Fast-forward
 ```
 
 `99f7807` 에 머물러 있던 로컬이 `97dfab0` 까지 따라왔습니다. 위 실행 방법의 첫 실행 안내가 이때 들어온 줄입니다.
+
+## 보너스 동작 확인
+
+```bash
+$ python3 -m unittest discover -s tests -v
+test_delete_saved_and_hint_roundtrip (testquiz.BonusTests.test_delete_saved_and_hint_roundtrip) ... ok
+test_question_count_random_selection (testquiz.BonusTests.test_question_count_random_selection) ... ok
+test_repeated_hint_penalty_once_and_persistence (testquiz.BonusTests.test_repeated_hint_penalty_once_and_persistence) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.010s
+
+OK
+```
+
+랜덤 출제와 문제 수 선택, 힌트 사용 시 한 번만 점수 차감, 게임 기록 저장과 재실행, 삭제 반영을 검사했습니다. 힌트를 두 번 본 정답은 50점이며 힌트 없는 다음 게임은 100점으로 기록됩니다.
